@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 200vh;
+}
+
+.sidebar {
+    width: 100px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    margin-left: 100px; /* Add margin to make space for the sidebar */
+    margin-right: 0; /* Add margin to make space for the cart */
+    background-color: #FFF2E6;
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
+    
+}
+
+.navbar{
+    display: none;
+    width: calc(100% - 400px);
+    position: fixed;
+    top: 0;
+    left: 100px;
+    right: 300px;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.header {
+    background-color: #FFF2E6;
+    position: fixed;
+    top: 0;
+    left: 100px; /* Align with the main content start */
+    right: 0; /* Align with the main content end */
+    z-index: 1000;
+    height: 160px;
+    display: grid;
+    grid-template-rows: 110px 50px;
+}
+
+.form-control{
+    width: 300px;;
+    margin-inline-end: 12px;
+}
+
+.items {
+    margin-inline: 40px;
+    margin-top: 180px; /* Add margin to push content below the fixed header */
+    overflow-y: auto;
+    max-height: calc(200vh - 160px); /* Ensure it fits within the viewport */
+    background-color: #FFF2E6;
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    gap: 40px;
+    overflow: hidden;
+}
+
+.item {
+    text-align: center;
+    height: 300px;
+}
+
+.item img{
+    border-radius: 8px;
+}
+
+.lower{
+    height: auto;
+    border-radius: 8px;
+}
+
+.cart {
+    display: none;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+    color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+
+.btns{
+    justify-content: space-evenly;
+}
+
+.btns button{
+    margin-top: 4px;
+    height: 40px;
+    background-color: #FF7C08;
+    color: white;
+    border-radius: 5px;
+    border: #FF7C08;
+    width: 120px;
+}
+
+.btns button:hover{
+    background-color: #CC6306;
+    transition: 0.3ms;
+}
+
+.description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.abc{
+    margin-top: 35px;
+    margin-bottom: 20px;
+    margin-inline-start: 100px;
+}
+
+
+
