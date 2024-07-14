@@ -39,8 +39,8 @@ document.getElementById('navbar-toggler').addEventListener('click',function(){
     const header = document.getElementById('header');
     const margin = document.getElementById('items');
     if(header.style.top = '200px'){
-        header.style.top = '200px';
-        margin.style.marginTop = '380px'
+        header.style.top = '250px';
+        margin.style.marginTop = '430px'
         console.log("ok-02");
     }
 })

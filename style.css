@@ -11,10 +11,23 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #333;
+    
     color: white;
-    padding: 20px;
+    
     box-sizing: border-box;
+    
+}
+
+.nav_img{
+    width: 80px;
+    height: 80px;
+    display: block;
+}
+
+.navbar-brand img{
+    width: 30px;
+    height: 30px;
+    display: block;
 }
 
 .sidebar h2 {
