@@ -85,7 +85,7 @@ body {
     max-height: calc(200vh - 160px); /* Ensure it fits within the viewport */
     background-color: #FFF2E6;
     display: grid;
-    grid-template-columns: repeat(5 ,1fr);
+    grid-template-columns: repeat(6 ,1fr);
     gap: 40px;
     overflow: hidden;
 }

@@ -17,7 +17,7 @@ document.getElementById('cart-icon').addEventListener('click', function() {
             cart.style.display = 'none';
             header.style.right = '0';
             maincontent.style.marginRight = '0';
-            items.style.gridTemplateColumns = 'repeat(5 ,1fr)';
+            items.style.gridTemplateColumns = 'repeat(6 ,1fr)';
         }
     }
 });
@@ -37,16 +37,20 @@ window.addEventListener('resize', function() {
 
 document.getElementById('navbar-toggler').addEventListener('click',function(){
     const header = document.getElementById('header');
+    const margin = document.getElementById('items');
     if(header.style.top = '200px'){
         header.style.top = '200px';
+        margin.style.marginTop = '380px'
         console.log("ok-02");
     }
 })
 
 document.getElementById('navbar-toggler').addEventListener('dblclick',function(){
     const header = document.getElementById('header');
+    const margin = document.getElementById('items');
     if(header.style.top = '200px'){
         header.style.top = '60px';
+        margin.style.marginTop = '240px'
         console.log("ok-02");
     }
 })

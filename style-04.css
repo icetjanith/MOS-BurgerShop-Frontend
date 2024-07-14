@@ -1,5 +1,10 @@
 @media only screen and (max-width: 690px) {
-    
+    body {
+        display: flex;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 400vh;
+    }
     .sidebar {
         display: none;
         width: 100px;
@@ -71,7 +76,7 @@
         margin-inline: 40px;
         margin-top: 240px; /* Add margin to push content below the fixed header */
         overflow-y: auto;
-        max-height: calc(200vh - 240px); /* Ensure it fits within the viewport */
+        max-height: calc(400vh - 240px); /* Ensure it fits within the viewport */
         background-color: #FFF2E6;
         display: grid;
         grid-template-columns: repeat(2 ,1fr);
