@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="menu-css-files/style-03.css">
     <link rel="stylesheet" href="menu-css-files/style-04.css">
     <link rel="stylesheet" href="menu-css-files/style-05.css">
+    
+    
 </head>
 <body>
     <div class="sidebar">
@@ -31,7 +33,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="M80-560v-320h320v320H80Zm60-60h200v-200H140v200ZM80-80v-320h320v320H80Zm60-60h200v-200H140v200Zm420-420v-320h320v320H560Zm60-60h200v-200H620v200ZM560-80v-320h320v320H560Zm60-60h200v-200H620v200ZM340-620Zm0 280Zm280-280Zm0 280Z"/></svg>
               </li>
               <li class="nav-item mt-5 ms-4">
-                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="m515-80-10-110h-40q-143 0-244-101T120-535q0-143 101.5-244T467-880q71 0 131.5 25.5T704-783q45 46 70.5 108.5T800-538q0 66-19.5 132T724-280q-37 60-90 111T515-80Zm50-108q82-69 128.5-162.5T740-538q0-124-77.5-203T467-820q-120 0-203.5 83.5T180-535q0 118 83.5 201.5T465-250h100v62Zm-98-115q16 0 27-11t11-27q0-16-11-27t-27-11q-16 0-27 11t-11 27q0 16 11 27t27 11Zm-27-136h50q0-25 8.5-41.5T534-524q27-27 38-49.5t11-48.5q0-45-30.5-74T471-725q-42 0-75 22t-49 60l46 19q11-26 30.5-38.5T468-675q30 0 47 14.5t17 38.5q0 19-11 38.5T482-535q-27 28-34.5 45t-7.5 51Zm20-65Z"/></svg>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z"/></svg>
+              </button>              
               </li>
               <li class="nav-itemmt-5 mt-5 ms-4">
                 <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v90h-60v-90H180v600h600v-90h60v90q0 24-18 42t-42 18H180Zm514-174-42-42 113-114H360v-60h405L652-624l42-42 186 186-186 186Z"/></svg>
@@ -76,8 +80,8 @@
         <div class="header" id="header">
             <div class="description">
                 <div class="message ">
-                    <h3 class="mt-4 ms-5 ">Welcome, Gorry</h3>
-                    <p class="ms-5">Shopping Whatever You Want</p>
+                    <h3 class="mt-4 ms-5 fw-bold lh-1 text-body-emphasis">Welcome, Gorry</h3>
+                    <p class="ms-5 fw-bold lh-1 text-body-emphasis">Discover whatever you need easily</p>
                 </div>
                 <div class="search">
                     <form class="abc d-flex" role="search">
@@ -89,81 +93,63 @@
             </div>
             <div class="btns d-flex ">
                 <button>All</button>
-                <button>All</button>
-                <button>All</button>
-                <button class="last-btn">All</button>
+                <button><img src="img/icons8-burger-50.png" alt="" srcset="">Burger</button>
+                <button><img src="img/icons8-burger-50.png" alt="" srcset="">Burger</button>
+                <button class="last-btn"><img src="img/icons8-burger-50.png" alt="" srcset="">Burger</button>
             </div>
         </div>
         <div class="items" id="items">
             <!-- Add more content here -->
             <div class="item" id="item-01">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
+                <a href="item.html"><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
                 <div class="lower w-100 h-25 bg-white">
-
+                  <div class="item-name d-flex justify-content-center">
+                    <h5 class="mt-2" style="font-weight: 600;">Burger</h5>
+                  </div>
+                  <div class="details">
+                    <div class="price-div">
+                      <h5 class="price">Rs.450</h5>
+                    </div>
+                    <div>
+                      <button type="button" class="add-cart-btn">ADD</button>
+                    </div>
+                  </div>
                 </div>
             </div>
-            <div class="item" id="item-02">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-03">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-04">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-05">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-06">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-07">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-08">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-09">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-10">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-11">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-12">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-13">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-14">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-15">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
-            </div>
-            <div class="item" id="item-16">
-                <a href=""><img class="w-100 h-75" src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg" alt="" srcset=""></a>
-                <div class="lower w-100 h-25 bg-white"></div>
+            
+            <!-- Add more items as needed -->
+            <!-- Modal -->
+            <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="itemModalLabel">Add Items</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form id="itemForm">
+                          <input type="file" id="itemImage" accept="image/*" class="form-control mb-2">
+                          <input type="text" id="itemName" placeholder="Item Name" class="form-control mb-2" required>
+                          <input type="text" id="itemCategory" placeholder="Item Category" class="form-control mb-2" required>
+                          <input type="number" id="itemPrice" placeholder="Item Price" class="form-control mb-2" required>
+                          <input type="number" id="itemQuantity" placeholder="Item Quantity" class="form-control mb-2" required>
+                          <input type="date" id="itemExpirationDate" placeholder="Expiration Date" class="form-control mb-2" required>
+                          <input type="text" id="itemCode" placeholder="Item Code" class="form-control mb-2" required>
+                          <button type="submit" class="btn btn-primary mt-2">Add Item</button>
+                        </form>
+                          <!-- Modal content goes here -->
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
             </div>
           
-            <!-- Add more items as needed -->
+
+            
+          
+          
         </div>
     </div>
     <div class="cart" id="cart">
@@ -175,10 +161,17 @@
         </div>
         <!-- Cart details here -->
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+<!-- Bootstrap 5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Your custom script -->
+<script src="menu.js"></script>
+
 </body>
 </html>

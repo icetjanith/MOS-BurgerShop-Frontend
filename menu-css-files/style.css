@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 200vh;
+    font-family: inherit,sans-serif;
 }
 
 .sidebar {
@@ -118,6 +119,8 @@ body {
 }
 
 .lower{
+    display: grid;
+    grid-template-rows: 50% 50%;
     height: auto;
     border-radius: 8px;
 }
@@ -153,6 +156,27 @@ body {
     align-items: center;
 }
 
+.price{
+    margin-inline-start: 8px;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.add-cart-btn{
+    margin-inline-end: 8px;
+    height: 30px;
+    background-color: #FF7C08;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    border: #FF7C08;
+    width: 60px;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+}
 .btns{
     justify-content: space-evenly;
 }
@@ -165,6 +189,11 @@ body {
     border-radius: 5px;
     border: #FF7C08;
     width: 120px;
+}
+
+.btns button img{
+    height: 30px;
+    margin-inline-end: 6px;
 }
 
 .btns button:hover{
