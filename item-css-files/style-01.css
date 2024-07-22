@@ -1,0 +1,17 @@
+body{
+    height: 400vh;
+}
+.main-content{
+    height: 600px;
+    width: 100%;
+}
+
+.form-control{
+    width: 300px;
+}
+
+.main-img{
+    margin: 30px;
+    height: 550px;
+    width: 100%;
+}

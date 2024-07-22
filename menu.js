@@ -22,7 +22,8 @@
     }
 });*/
 
-let items = [];
+export const items = [{ id: 1, name: 'Burger 1', imageSrc: 'img/burger1.jpg' },
+    { id: 2, name: 'Burger 2', imageSrc: 'img/burger2.jpg' },];
 
 window.addEventListener('resize', function() {
         const cart = document.getElementById('cart');
