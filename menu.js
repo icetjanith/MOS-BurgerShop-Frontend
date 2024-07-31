@@ -71,9 +71,116 @@ document.getElementById('navbar-toggler').addEventListener('dblclick',function()
     }
 })
 
-let items = [];
+let items = [{
+    id: 1,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 2,
+    name: "Veggie Burger",
+    category: "Food",
+    price: 6.49,
+    quantity: 5,
+    expirationDate: new Date("2024-08-20"),
+    code: "VB002"
+},
+{
+    id: 3,
+    name: "French Fries",
+    category: "Food",
+    price: 2.99,
+    quantity: 20,
+    expirationDate: new Date("2024-08-10"),
+    code: "FF003"
+},
+{
+    id: 4,
+    name: "Cola",
+    category: "Beverage",
+    price: 1.99,
+    quantity: 30,
+    expirationDate: new Date("2024-12-01"),
+    code: "CO004"
+},
+{
+    id: 5,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 6,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 7,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 8,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 9,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 10,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 11,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+},
+{
+    id: 12,
+    name: "Classic Burger",
+    category: "Food",
+    price: 5.99,
+    quantity: 10,
+    expirationDate: new Date("2024-08-15"),
+    code: "CB001"
+}];
 
-let itemIdCounter = 1;
+
 
         document.getElementById('itemForm').addEventListener('submit', function(event) {
             event.preventDefault();

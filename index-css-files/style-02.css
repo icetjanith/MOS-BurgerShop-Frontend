@@ -12,19 +12,13 @@ body{
     }
 
 .label-01{
-    display: grid;
+    display: flex;
     grid-template-rows: 2 1fr;
     }
-.content-01 img{
-    height: 600px;
-    width: 800px;
-    }
+
 .label-02{
     display: grid;
     grid-template-rows: 2 1fr;
     }
-.content-02 img{
-    height: 600px;
-    width: 800px
-    }
+
 }
