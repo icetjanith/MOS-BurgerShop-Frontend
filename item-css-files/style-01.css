@@ -2,16 +2,40 @@ body{
     height: 400vh;
 }
 .main-content{
-    height: 600px;
-    width: 100%;
+
+    display: flex;
+    grid-template-columns: 2 1;
+    gap: 10px;
 }
 
-.form-control{
-    width: 300px;
+.column{
+   height: 800px; 
+   width: 100%;
 }
 
-.main-img{
-    margin: 30px;
-    height: 550px;
+.column img{
+    height: 800px;
     width: 100%;
+    display: block;
+    padding: 30px;
+    border-radius: 50px;
+    
 }
+
+.details{
+    height: 650px;
+    width: 96%;
+    margin-top: 100px;
+    margin-inline-end: 20px;
+}
+
+.item-name{
+    margin-inline-start: 50px;
+    margin-block: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hide{
+    display: none;
+}
+

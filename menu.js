@@ -22,8 +22,7 @@
     }
 });*/
 
-export const items = [{ id: 1, name: 'Burger 1', imageSrc: 'img/burger1.jpg' },
-    { id: 2, name: 'Burger 2', imageSrc: 'img/burger2.jpg' },];
+
 
 window.addEventListener('resize', function() {
         const cart = document.getElementById('cart');
@@ -61,6 +60,8 @@ document.getElementById('navbar-toggler').addEventListener('dblclick',function()
         console.log("ok-02");
     }
 })
+
+let items = [];
 
 let itemIdCounter = 1;
 
@@ -120,7 +121,7 @@ let itemIdCounter = 1;
             img.src = imgSrc;
             img.alt = name;
             anchor.appendChild(img);
-            anchor.href = 'item.html';
+            anchor.href = `item.html?id=${id}`;
 
             // Create the lower div
             const lowerDiv = document.createElement('div');
@@ -163,8 +164,43 @@ let itemIdCounter = 1;
 
             // Append the item card to the container
             document.getElementById('items').appendChild(itemDiv);
+
+            console.log(items.length);
+            items.forEach(item=>{
+                console.log(`ID: ${item.id}, Name: ${item.name}, Price: $${item.price}`);
+            });
+
+            anchor.addEventListener('click',function(event){
+                event.preventDefault();
+                console.log("cliked");
+                items.forEach(item=>{
+                    console.log(`ID: ${item.id}, Name: ${item.name}, Price: $${item.price}`);
+                });
+
+                let givenId = 1;
+                const foundItem = items.find(item => item.id === givenId);
+
+                if (foundItem) {
+                    console.log('Item found:', foundItem);
+                    localStorage.setItem('selectedItem', JSON.stringify(foundItem));
+                    console.log('Stored Item:', localStorage.getItem('selectedItem'));              
+                    window.location.href = "item.html";
+                    const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+                    document.getElementById('item-name').textContent = selectedItem.name;
+                    document.getElementById('main-img').src = selectedItem.imageSrc;
+                } else {
+                    console.log('Item not found');
+                }
+
+                
+                
+
+            })
         }
 
+        
+
+        
 
 
 

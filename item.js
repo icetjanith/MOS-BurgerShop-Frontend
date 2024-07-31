@@ -1,5 +1,4 @@
 // menu.js
-import { items } from './menu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchItems();
