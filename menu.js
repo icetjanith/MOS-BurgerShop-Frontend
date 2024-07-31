@@ -21,8 +21,18 @@
         }
     }
 });*/
-
-
+const buttonName1 = document.getElementById("btn-name1");
+const buttonName2 = document.getElementById("btn-name2");
+const buttonName3 = document.getElementById("btn-name3");
+if(window.innerWidth < 1000){
+    buttonName1.style.display = 'none';
+    buttonName2.style.display = 'none';
+    buttonName3.style.display = 'none';
+}else{
+    buttonName1.style.display = '';
+    buttonName2.style.display = '';
+    buttonName3.style.display = '';
+}
 
 window.addEventListener('resize', function() {
         const cart = document.getElementById('cart');
