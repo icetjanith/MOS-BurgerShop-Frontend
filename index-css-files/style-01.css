@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #502314;
+    background: rgb(245, 242, 237);
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-style: normal;
+}
+
+.label-01{
+    display: flex;
+}
+.content-01 img{
+    display: block;
+}
+.label-02{
+    display: flex;
+}
+.content-02 img{
+    display: block;
+}
+
+.newsletter {
+    padding: 80px 0;
+    background: rgb(245, 242, 237);
+    }
+    
+    .newsletter .content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2; 
+    }
+    .newsletter .content h2 {
+    color: #243c4f;
+    margin-bottom: 40px; }
+    .newsletter .content .form-control {
+    height: 50px;
+    border-color: rgb(245, 242, 237);
+    border-radius:0;
+    }
+    .newsletter .content.form-control:focus {
+    box-shadow: none;
+    border: 2px solid #243c4f;
+    }
+    .newsletter .content .btn {
+    min-height: 50px; 
+    border-radius:0;
+    background-color: #3b180c;
+    color: #fff;
+    font-weight:600;
+    }
+------------------------------------------------------------------------------------------------------------------------------------------
+
+.footerr{
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.contact{
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+}
+.line-1 , .line-2 , .line-3{
+    margin-bottom: 12px;
+    margin-right: 10px;
+}
+
+.contact-form form input{
+    border: 0px;
+    outline: none;
+    padding: 10px 20px;
+    height: 60px;
+    width: 350px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+.contact-form form textarea {
+    width: 715px;
+    height: 180px;
+    border: 0px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    resize: none;
+    padding: 10px 20px;
+}
+.contact-form form button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #3b180c;
+    color: white;
+    border-radius: 8px;
+    width: 120px;
+    height: 40px;
+    font-weight: 700;
+}
+.contact-form h1{
+    font-weight: 700;
+}
+.contact-form p {
+    font-weight: 6500;
+    margin-top: -2px;
+    margin-bottom: 20px;
+}
+
+.contact-details h1{
+    font-weight: 700;
+    margin-bottom: 37px;
+}
+.contact-details p{
+    font-weight: 500;
+}
+.contact-details .social h2 {
+    font-weight: 700;
+    margin-top: 60px;
+}
+.contact-details .social i{
+    margin-right: 5px;
+}
