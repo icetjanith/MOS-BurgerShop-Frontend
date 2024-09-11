@@ -1,0 +1,49 @@
+@media only screen and (max-width: 992px) {
+    .cartsection{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        
+        top: 0;
+        left: 80%;
+        position: fixed;
+    
+    }
+
+    .header{
+        position: absolute;
+        z-index: 1000;
+        background-color: aliceblue;
+        left: 0;
+        right: 0;
+    }
+
+    .sidebar{
+        display: none;
+        flex-direction: column;
+        width: 0%;
+        top: 0;
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .navbar{
+        position: fixed;
+        z-index: 1000;
+    }
+    .main_content{
+    position: absolute;
+    left: 0.0%;
+    right: 0%;
+    top: 0px;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    }
+}
+
+

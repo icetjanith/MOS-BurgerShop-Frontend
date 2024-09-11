@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/menu-css-files/menu.css">
+  <link rel="stylesheet" href="../css/menu-css-files/menu-2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#itemModal">Add Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!---------------------------------------------------------------------------------------------------------------------------------->
+  <header class="header">
+    <div class="row">
+      <div class="textcontainer col-lg-6 col-md-6 col-sm-12 col-12">
+        <p class="welcome_msg mt-3 ">Welcome, Gorry</p>
+        <p class="desc">Discover whatever you need easily</p>
+      </div>
+      <div class=" col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="searchcontainer mt-4 me-2">
+          <input type="text" class="form-control ms-2 me-2">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3 mb-3">
+      <div
+        class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 mb-2 mb-sm-0 mb-md-0 mb-lg-0 d-flex justify-content-center">
+        <button class="btn btn-primary">All</button>
+      </div>
+      <div
+        class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 mb-2 mb-sm-0 mb-md-0 mb-lg-0 d-flex justify-content-center">
+        <button class="btn btn-primary">Burgers</button>
+      </div>
+      <div class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
+        <button class="btn btn-primary">Hotdog</button>
+      </div>
+      <div class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
+        <button class="btn btn-primary">Beverage</button>
+      </div>
+    </div>
+  </header>
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="sidebar">
+    <img src="../img/download.png" alt="" srcset="" class="img-fluid my-3 mx-auto mt-4" width="80%">
+    <img src="../img/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset="" class="img-fluid my-3 mx-auto mt-4"
+      width="80%">
+    <img src="../img/settings_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset=""
+      class="img-fluid my-3 mx-auto mt-4" width="80%">
+    <img src="..//img/add-button-sign-of-a-plus-symbol-inside-a-double-square-shape-svgrepo-com.svg" alt="" srcset=""
+      class="img-fluid my-3 mx-auto mt-4" width="80%" data-bs-toggle="modal" data-bs-target="#itemModal">
+    
+  </div>
+
+  <!------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="cartsection">
+    <div class="cart">
+      <div class="cart_title">
+        <h1 class="cart_text">Cart</h1>
+      </div>
+
+      <div class="cart_section">
+        <div class="cart_item mb-2">
+          <img width="20%" class="img-fluid"
+            src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg"
+            alt="" srcset="">
+          <p class="cart_item_name">Burger</p>
+          <p class="quantity">Q - 10</p>
+        </div>
+        <div class="cart_item mb-2">
+          <img width="20%" class="img-fluid"
+            src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg"
+            alt="" srcset="">
+          <p class="cart_item_name">Burger</p>
+          <p class="quantity">Q - 10</p>
+        </div>
+        <div class="total">
+          <p class="mt-3">Total : 500.00</p>
+        </div>
+      </div>
+
+      <div class="empty_cart d-none">
+        <img src="img/pngwing.com.png" alt="" class="img-fluid">
+      </div>
+      <div class="checkout_button">
+        <button class="btn btn-info fw-bold"
+          style="color: white; background-color: rgb(55, 102, 241);">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="main_content" id="main_content">
+
+    <div class="spinner" id="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="itemModalLabel">Add Items</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="itemForm">
+            <input type="file" id="itemImage" class="form-control mb-2">
+            <input type="text" id="itemName" placeholder="Item Name" class="form-control mb-2" required>
+            <input type="text" id="itemCategory" placeholder="Item Category" class="form-control mb-2" required>
+            <input type="number" id="itemPrice" placeholder="Item Price" class="form-control mb-2" required>
+            <input type="number" id="itemQuantity" placeholder="Item Quantity" class="form-control mb-2" required>
+            <input type="date" id="itemExpirationDate" placeholder="Expiration Date" class="form-control mb-2" required>
+            <input type="text" id="itemCode" placeholder="Item Code" class="form-control mb-2" required>
+            <button type="button" class="btn btn-primary mt-2" id="addBtn">Add Item</button>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="../js/menu-js/menu.js"></script>
+</body>
+
+</html>

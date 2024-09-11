@@ -1,0 +1,36 @@
+@media only screen and (max-width: 980px) {
+
+    body{
+        height: 400vh;
+    }
+    .main-content{
+    
+        display: grid;
+        grid-template-rows: 2 1;
+        gap: 10px;
+    }
+    
+    .column{
+       height: 800px; 
+       width: 100%;
+    }
+    
+    .column img{
+        height: 800px;
+        width: 100%;
+        display: block;
+        padding: 30px;
+        border-radius: 50px;
+        
+    }
+    
+    .details{
+        height: 700px;
+        width: 94%;
+        border-radius: 50px;
+        margin-top: 40px;
+        margin-inline-end: 20px;
+        margin-inline-start: 20px;
+    }
+
+}
