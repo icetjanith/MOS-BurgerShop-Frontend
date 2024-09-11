@@ -1,5 +1,7 @@
 async function loadItems() {
     let spinner=document.getElementById("spinner");
+    // let main=document.getElementById("main_content");
+    // main.style.backgroundColor='white';
     try {
         let res = await fetch("https://burger-shop-backend-1.onrender.com/item");
         let data = await res.json();
@@ -50,8 +52,8 @@ window.addEventListener('resize', adjustMainContentTop);
 function createItem(itemImage, Name, itemPrice, itemCode) {
 
     let mainDiv = document.createElement('div');
-    mainDiv.classList.add("col-lg-2", "col-md-2", "col-sm-3", "col-4", "mx-3", "mt-4");
-    document.getElementById("main_content").appendChild(mainDiv);
+    mainDiv.classList.add("col-lg-2", "col-md-2", "col-sm-3", "col-4", "mx-3", "mt-4", "mainDiv" );
+    document.getElementById("row").appendChild(mainDiv);
 
     let itemDiv = document.createElement('div');
     itemDiv.classList.add("item");
@@ -61,7 +63,9 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
     link.href = `item-details.html?code=${itemCode}`;
 
     let img = document.createElement('img');
-    img.classList.add("img-fluid", "rounded-2");
+    img.classList.add("img-class", "img-fluid", "rounded-2");
+    img.style.height='10rem';
+    img.style.width='100%';
     img.src = itemImage;
 
     link.appendChild(img);

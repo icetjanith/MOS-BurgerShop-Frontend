@@ -9,7 +9,7 @@ body{
     z-index: 1000;
     left: 5%;
     right: 20%;
-    background-color: aliceblue;
+    background-color:  rgb(245, 242, 237);
     position: fixed;
 }
 
@@ -153,31 +153,30 @@ body{
     right: 20%;
     top: 0px;
     width: 75%;
-    background-color: aliceblue;
-    display: flex;
-    flex-wrap: wrap;
+    background-color:  rgb(245, 242, 237);
+    
 }
 
 .spinner{
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 15rem;
+    background-color: white;
 }
 ------------------------------------------------------------------------------------------------------------
+
 .item{
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.image{
-    
-}
-
 .lower{
     display: flex;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 .item-name{
