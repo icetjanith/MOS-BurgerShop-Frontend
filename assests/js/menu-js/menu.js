@@ -3,7 +3,7 @@ async function loadItems() {
     // let main=document.getElementById("main_content");
     // main.style.backgroundColor='white';
     try {
-        let res = await fetch("http://localhost:8080/item");
+        let res = await fetch("https://burger-shop-backend-1.onrender.com/item");
         let data = await res.json();
         data.forEach(element => {
             createItem(element.itemImage, element.itemName, element.itemPrice, element.itemCode);
