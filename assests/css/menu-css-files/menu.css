@@ -9,7 +9,7 @@ body{
     z-index: 1000;
     left: 5%;
     right: 20%;
-    background-color:  rgb(245, 242, 237);
+    background-color: #FFF2E6;
     position: fixed;
 }
 
@@ -39,10 +39,11 @@ body{
 }
 
 .cart{
+    width: 97%;
     box-sizing: border-box;
     margin: 5px;
     height: 100vh;
-    border: 2px solid rgb(55, 102, 241);
+    border: 2px solid #FF7C08;
     border-radius: 9px;
     display: grid;
     grid-template-rows: auto;
@@ -50,12 +51,13 @@ body{
 }
 
 .cart_title{
+    
     box-sizing: border-box;
     margin-top: 10px;
     padding-inline: 80px;
     margin-inline: auto;
     border-radius: 5px;
-    background-color: rgb(55, 102, 241);
+    background-color: #FF7C08;
     width: 98%;
     height: fit-content;
     display: flex;
@@ -80,7 +82,7 @@ body{
     flex-wrap: wrap;
     margin-inline: 5px;
     border-radius: 5px;
-    background-color: rgb(55, 102, 241);
+    background-color: #FF7C08;
     color: white;
 }
 
@@ -110,7 +112,7 @@ body{
     text-align: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    background-color: rgb(55, 102, 241);
+    background-color: #FF7C08;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border-radius: 5px;
@@ -134,6 +136,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
+    margin-right: 230px;
 }
 
 .desc{
@@ -147,13 +150,24 @@ body{
     display: flex;
 }
 
+.add-btn{
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #FF7C08;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    border: #FF7C08;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .main_content{
     position: absolute;
     left: 5.0%;
     right: 20%;
     top: 0px;
     width: 75%;
-    background-color:  rgb(245, 242, 237);
+    background-color: #FFF2E6;
     
 }
 
@@ -161,8 +175,8 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 15rem;
     background-color: white;
+
 }
 ------------------------------------------------------------------------------------------------------------
 
@@ -177,11 +191,26 @@ body{
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    border-radius: 7px;
 }
 
 .item-name{
     display: flex;
     justify-content: center;
+}
+
+.name{
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.price{
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-inline-start: 5px;
+    margin-bottom: 2px;
 }
 
 .details{
@@ -191,11 +220,15 @@ body{
 }
 
 .add-cart-btn{
-    background-color: rgb(77, 86, 252);
-    border: 0;
+    background-color: #FF7C08;
+    border: #FF7C08;
     border-radius: 3px;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    margin-inline-end: 5px;
+    margin-bottom: 3px;
+    width: 4rem;
 }
 

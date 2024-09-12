@@ -3,7 +3,7 @@ async function loadItems() {
     // let main=document.getElementById("main_content");
     // main.style.backgroundColor='white';
     try {
-        let res = await fetch("https://burger-shop-backend-1.onrender.com/item");
+        let res = await fetch("http://localhost:8080/item");
         let data = await res.json();
         data.forEach(element => {
             createItem(element.itemImage, element.itemName, element.itemPrice, element.itemCode);
@@ -52,7 +52,7 @@ window.addEventListener('resize', adjustMainContentTop);
 function createItem(itemImage, Name, itemPrice, itemCode) {
 
     let mainDiv = document.createElement('div');
-    mainDiv.classList.add("col-lg-2", "col-md-2", "col-sm-3", "col-4", "mx-3", "mt-4", "mainDiv" );
+    mainDiv.classList.add("col-lg-2", "col-md-3", "col-sm-3", "col-6", "mx-lg-3", "mx-md-1", "mx-sm-1", "mx-0", "mt-4", "mainDiv" );
     document.getElementById("row").appendChild(mainDiv);
 
     let itemDiv = document.createElement('div');
@@ -64,7 +64,7 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
 
     let img = document.createElement('img');
     img.classList.add("img-class", "img-fluid", "rounded-2");
-    img.style.height='10rem';
+    img.style.height='12rem';
     img.style.width='100%';
     img.src = itemImage;
 
@@ -80,7 +80,7 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
 
     let name = document.createElement('h5');
     name.textContent = Name;
-    name.classList.add("mt-2");
+    name.classList.add("name", "mt-2");
     itemName.appendChild(name);
     lowerDiv.appendChild(itemName);
 
@@ -95,7 +95,7 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
     let price = document.createElement('h5');
     price.textContent = itemPrice;
     price.classList.add("price");
-    price.textContent = itemPrice;
+    price.textContent ="Rs."+itemPrice;
     priceDiv.appendChild(price);
 
     let btnDiv = document.createElement('div');
@@ -103,7 +103,7 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
 
     let addButton = document.createElement('button');
     addButton.classList.add("add-cart-btn");
-    addButton.textContent = "Add";
+    addButton.textContent = "ADD";
     addButton.setAttribute('data-item-code', itemCode);
     btnDiv.appendChild(addButton);
 }

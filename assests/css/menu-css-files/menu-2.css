@@ -1,25 +1,17 @@
 @media only screen and (max-width: 992px) {
-    .cartsection{
+    .cartsection {
         display: none;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        
-        top: 0;
-        left: 80%;
-        position: fixed;
-    
     }
 
-    .header{
+    .header {
         position: absolute;
         z-index: 1000;
-        background-color: aliceblue;
+        background-color: #FFF2E6;
         left: 0;
         right: 0;
     }
 
-    .sidebar{
+    .sidebar {
         display: none;
         flex-direction: column;
         width: 0%;
@@ -30,20 +22,333 @@
         position: fixed;
     }
 
-    .navbar{
+    .navbar1 {
         position: fixed;
-        z-index: 1000;
+        z-index: 2000;
+        background-color: #FFF2E6;
     }
-    .main_content{
-    position: absolute;
-    left: 0.0%;
-    right: 0%;
-    top: 0px;
-    width: 100%;
-    background-color: aliceblue;
-    display: flex;
-    flex-wrap: wrap;
+
+    .main_content {
+        position: absolute;
+        left: 0.0%;
+        right: 0%;
+        top: 0px;
+        width: 100%;
+        background-color: #FFF2E6;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .textcontainer {
+        display: grid;
+        justify-content: center;
+    }
+
+    .welcome_msg {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        font-weight: 600;
+        margin-right: 0px;
+    }
+
+    .desc {
+        margin-top: -18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        font-weight: 600;
+    }
+
+    .searchcontainer {
+        display: flex;
+    }
+
+    .spinner {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: white;
+
+    }
+
+    ------------------------------------------------------------------------------------------------------------ .item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .lower {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .item-name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .add-cart-btn {
+        background-color: rgb(77, 86, 252);
+        border: 0;
+        border-radius: 3px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .cartsection {
+        display: none;
+    }
 
+    .header {
+        position: absolute;
+        z-index: 1000;
+        background-color: #FFF2E6;
+        left: 0;
+        right: 0;
+    }
+
+    .sidebar {
+        display: none;
+        flex-direction: column;
+        width: 0%;
+        top: 0;
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .navbar1 {
+        position: fixed;
+        z-index: 2000;
+    }
+
+    .main_content {
+        position: absolute;
+        left: 0.0%;
+        right: 0%;
+        top: 0px;
+        width: 100%;
+        background-color: #FFF2E6;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .textcontainer {
+        display: grid;
+        justify-content: center;
+    }
+
+    .welcome_msg {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .desc {
+        margin-top: -18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        font-weight: 600;
+    }
+
+    .searchcontainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchContainer {
+        max-width: 50%;
+    }
+
+    .spinner {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: white;
+
+    }
+
+    ------------------------------------------------------------------------------------------------------------ .item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .lower {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .item-name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .add-cart-btn {
+        background-color: rgb(77, 86, 252);
+        border: 0;
+        border-radius: 3px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .cartsection {
+        display: none;
+    }
+
+    .header {
+        position: absolute;
+        z-index: 1000;
+        background-color: #FFF2E6;
+        left: 0;
+        right: 0;
+    }
+
+    .sidebar {
+        display: none;
+        flex-direction: column;
+        width: 0%;
+        top: 0;
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .navbar1 {
+        position: fixed;
+        z-index: 2000;
+    }
+
+    .main_content {
+        position: absolute;
+        left: 0.0%;
+        right: 0%;
+        top: 0px;
+        width: 100%;
+        background-color: #FFF2E6;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .textcontainer {
+        display: grid;
+        justify-content: center;
+    }
+
+    .welcome_msg {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .desc {
+        margin-top: -18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;
+        font-weight: 600;
+    }
+
+    .searchcontainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchContainer {
+        max-width: 50%;
+    }
+
+    .add-btn {
+        width: 8rem;
+        height: 2.5rem;
+        background-color: #FF7C08;
+        font-weight: 600;
+        color: white;
+        border-radius: 5px;
+        border: #FF7C08;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .spinner {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: white;
+
+    }
+
+    ------------------------------------------------------------------------------------------------------------ .item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .lower {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .item-name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .name {
+        font-size: 1.0rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .price {
+        font-size: 1.0rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-inline-start: 4px;
+        margin-bottom: -1px;
+    }
+
+    .details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .add-cart-btn {
+        background-color: #FF7C08;
+        border: #FF7C08;
+        border-radius: 3px;
+        color: white;
+        font-size: 0.9rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-inline-end: 4px;
+        margin-bottom: 4px;
+        width: 3rem;
+    }
+}
