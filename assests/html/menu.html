@@ -56,17 +56,17 @@
     <div class="row mt-3 mb-3">
       <div
         class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 mb-2 mb-sm-0 mb-md-0 mb-lg-0 d-flex justify-content-center">
-        <button class="add-btn">All</button>
+        <button class="add-btn" id="all">All</button>
       </div>
       <div
         class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 mb-2 mb-sm-0 mb-md-0 mb-lg-0 d-flex justify-content-center">
-        <button class="add-btn">Burgers</button>
+        <button class="add-btn" id="burgers">Burgers</button>
       </div>
       <div class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
-        <button class="add-btn">Hotdog</button>
+        <button class="add-btn" id="hotdog">Hotdog</button>
       </div>
       <div class="category_btn_div col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
-        <button class="add-btn">Beverage</button>
+        <button class="add-btn" id="beverage">Beverage</button>
       </div>
     </div>
   </header>
@@ -74,50 +74,50 @@
 
   <div class="sidebar">
     <img src="../img/download.png" alt="" srcset="" class="img-fluid my-3 mx-auto mt-4" width="80%">
-    <img src="../img/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset="" class="img-fluid my-3 mx-auto mt-4"
-      width="80%">
-    <img src="../img/settings_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset=""
+    <a href="../../index.html" class=" my-3 mx-lg-2 mt-4"><img
+        src="../img/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset="" class="img-fluid" width="80%"></a>
+    <a href="../html/cart.html" target="_blank" class=" my-3 mx-auto mt-4"><img
+        src="../img/shopping-cart-empty-side-view.png" alt="" srcset="" class="img-fluid" width="70%"></a>
+    <img src="../img/add-user_5918883.png" alt="" srcset=""
       class="img-fluid my-3 mx-auto mt-4" width="80%">
     <img src="..//img/add-button-sign-of-a-plus-symbol-inside-a-double-square-shape-svgrepo-com.svg" alt="" srcset=""
-      class="img-fluid my-3 mx-auto mt-4" width="80%" data-bs-toggle="modal" data-bs-target="#itemModal">
-    
+      class="img-fluid my-3 mx-auto mt-4" width="80%" id="setting">
+
   </div>
 
   <!------------------------------------------------------------------------------------------------------------------------------------------------------->
 
   <div class="cartsection">
     <div class="cart">
+
       <div class="cart_title">
         <h2 class="cart_text">Cart</h2>
       </div>
 
-      <div class="cart_section">
-        <div class="cart_item mb-2">
-          <img width="20%" class="img-fluid"
-            src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg"
-            alt="" srcset="">
-          <p class="cart_item_name">Burger</p>
-          <p class="quantity">Q - 10</p>
-        </div>
-        <div class="cart_item mb-2">
-          <img width="20%" class="img-fluid"
-            src="img/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce.jpg"
-            alt="" srcset="">
-          <p class="cart_item_name">Burger</p>
-          <p class="quantity">Q - 10</p>
-        </div>
+      <div class="emptyCartImg" id="emptyCartImg">
+        <img src="../img/pngwing.com.png" alt="" srcset="" class="img-fluid">
+      </div>
+
+      <div class="cart_section bg-body-tertiary" id="cart_section">
+
+
+
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
         <div class="total">
-          <p class="mt-3">Total : 500.00</p>
+          <p class="mt-3" id="total">Total : 500.00</p>
         </div>
       </div>
 
       <div class="empty_cart d-none">
         <img src="img/pngwing.com.png" alt="" class="img-fluid">
       </div>
-      <div class="checkout_button">
-        <button class="btn fw-bold"
-          style="color: white; background-color:#FF7C08;">Checkout</button>
+
+      <div class="checkout_button" id="checkout_button">
+        <button class="btn fw-bold" style="color: white; background-color:#FF7C08;">Checkout</button>
       </div>
+
     </div>
   </div>
 
@@ -148,7 +148,12 @@
           <form id="itemForm">
             <input type="file" id="itemImage" class="form-control mb-2">
             <input type="text" id="itemName" placeholder="Item Name" class="form-control mb-2" required>
-            <input type="text" id="itemCategory" placeholder="Item Category" class="form-control mb-2" required>
+            <select name="itemCategory" id="itemCategory" class="form-select mb-2" required>
+              <option selected>Select Category</option>
+              <option value="burger">Burger</option>
+              <option value="hotdog">Hotdog</option>
+              <option value="beverage">Beverage</option>
+            </select>
             <input type="number" id="itemPrice" placeholder="Item Price" class="form-control mb-2" required>
             <input type="number" id="itemQuantity" placeholder="Item Quantity" class="form-control mb-2" required>
             <input type="date" id="itemExpirationDate" placeholder="Expiration Date" class="form-control mb-2" required>
@@ -164,14 +169,32 @@
     </div>
   </div>
 
+  <div class="modal" tabindex="-1" id="checkout">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
-  <script src="../js/menu-js/menu.js"></script>
+  <script defer src="../js/menu-js/menu.js"></script>
 </body>
 
 </html>

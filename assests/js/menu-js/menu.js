@@ -1,17 +1,89 @@
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+let total=0;
+
+function addToCart(itemCode, itemImage, itemPrice, itemName) {
+    console.log(itemImage);
+    console.log(itemName);
+    document.getElementById('emptyCartImg').style.display = 'none';
+    let totalPrice=document.getElementById('total');
+    let existingItem = cart.find(item => item.itemCode === itemCode);
+    if (existingItem) {
+        
+        existingItem.quantity += 1;
+        total+=itemPrice;
+        totalPrice.innerHTML="Total : "+total;
+    } else {
+        
+        cart.push({ image: itemImage, itemCode: itemCode, name: itemName, price: itemPrice, quantity: 1 });
+        total+=itemPrice;
+        totalPrice.innerHTML="Total : "+total;
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    displayCart();
+}
+
+function displayCart() {
+
+    total=0;
+
+    let totalPrice=document.getElementById('total');
+
+    if(cart.length > 0) {
+        document.getElementById('emptyCartImg').style.display = 'none';
+    }
+
+    const cartSection = document.getElementById("cart_section");
+    cartSection.innerHTML = "";
+
+    cart.forEach(item => {
+
+        console.log(item.name);
+        console.log(item.image);
+        cartSection.innerHTML += `
+            <div class="cart_item mb-2">
+                <div class="image">
+                    <img
+                        src="${item.image}"
+                        alt="" srcset="">
+                </div>
+                <div class="name">
+                    ${item.name}
+                </div>
+                <div class="totalPrice">
+                    ${item.price * item.quantity}
+                </div>
+                <div class="quantity">
+                    ${item.quantity}
+                </div>
+            </div>
+        `;
+
+        total+=item.price * item.quantity;
+
+    });
+    totalPrice.innerHTML="Total : "+total;
+}
+
+
+window.onload = displayCart;
+
 async function loadItems() {
-    let spinner=document.getElementById("spinner");
-    // let main=document.getElementById("main_content");
-    // main.style.backgroundColor='white';
+    let spinner = document.getElementById("spinner");
+    spinner.style.display = 'flex';
+
     try {
-        let res = await fetch("https://burger-shop-backend-1.onrender.com/item");
+        let res = await fetch("http://localhost:8080/item/all");
         let data = await res.json();
         data.forEach(element => {
-            createItem(element.itemImage, element.itemName, element.itemPrice, element.itemCode);
+            createItem(element.itemImage, element.itemName, element.itemPrice, element.itemId);
         });
 
     } catch (error) {
 
-    } finally{
+    } finally {
         spinner.style.display = 'none';
     }
 }
@@ -49,10 +121,10 @@ adjustMainContentTop();
 window.addEventListener('resize', checkBrowserSize);
 window.addEventListener('resize', adjustMainContentTop);
 
-function createItem(itemImage, Name, itemPrice, itemCode) {
+function createItem(itemImage, Name, itemPrice, itemId) {
 
     let mainDiv = document.createElement('div');
-    mainDiv.classList.add("col-lg-2", "col-md-3", "col-sm-3", "col-6", "mx-lg-3", "mx-md-1", "mx-sm-1", "mx-0", "mt-4", "mainDiv" );
+    mainDiv.classList.add("col-lg-2", "col-md-3", "col-sm-3", "col-6", "mx-lg-auto", "mx-md-auto", "mx-sm-auto", "mx-0", "mt-4", "mainDiv");
     document.getElementById("row").appendChild(mainDiv);
 
     let itemDiv = document.createElement('div');
@@ -60,12 +132,12 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
     mainDiv.appendChild(itemDiv);
 
     let link = document.createElement('a');
-    link.href = `item-details.html?code=${itemCode}`;
+    link.href = `item-details.html?code=${itemId}`;
 
     let img = document.createElement('img');
     img.classList.add("img-class", "img-fluid", "rounded-2");
-    img.style.height='12rem';
-    img.style.width='100%';
+    img.style.height = '12rem';
+    img.style.width = '100%';
     img.src = itemImage;
 
     link.appendChild(img);
@@ -95,7 +167,7 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
     let price = document.createElement('h5');
     price.textContent = itemPrice;
     price.classList.add("price");
-    price.textContent ="Rs."+itemPrice;
+    price.textContent = "Rs." + itemPrice;
     priceDiv.appendChild(price);
 
     let btnDiv = document.createElement('div');
@@ -106,9 +178,16 @@ function createItem(itemImage, Name, itemPrice, itemCode) {
     addButton.textContent = "ADD";
     addButton.setAttribute('data-item-code', itemCode);
     btnDiv.appendChild(addButton);
+
+    addButton.addEventListener("click", function () {
+
+        addToCart(this.getAttribute("data-item-code"), itemImage, itemPrice, Name);
+    });
 }
 
 function addProduct(event) {
+    let itemModel=bootstrap.Modal.getOrCreateInstance("#itemModal");
+    
     event.preventDefault();
     console.log("clicked");
     const fileInput = document.getElementById("itemImage");
@@ -128,7 +207,7 @@ function addProduct(event) {
         itemDetails.itemExpiryDate = document.getElementById("itemExpirationDate").value;
         itemDetails.itemCode = document.getElementById("itemCode").value;
 
-        fetch("http://localhost:8080/item", {
+        fetch("http://localhost:8080/item/saveitem", {
 
             method: "POST",
 
@@ -142,8 +221,8 @@ function addProduct(event) {
             .then(res => res.json())
             .then(json => {
                 console.log(json);
-
-                createItem(json.itemImage, json.itemName, json.itemPrice, json.itemCode);
+                itemModel.hide();
+                createItem(json.itemImage, json.itemName, json.itemPrice,json.itemId);
             }
             );
 
@@ -151,8 +230,60 @@ function addProduct(event) {
 
     reader.readAsDataURL(file);
 
-
 }
+
+document.getElementById("setting").addEventListener('click',function(){
+    console.log("settings clicked")
+    let itemModel=bootstrap.Modal.getOrCreateInstance("#itemModal");
+    itemModel.show();
+});
+
 
 
 document.getElementById("addBtn").addEventListener('click', addProduct);
+
+document.getElementById('all').addEventListener('click', function(){
+    document.getElementById("row").innerHTML='';
+    loadItems();
+});
+
+
+async function getItemsByCategory(category) {
+    
+    let spinner = document.getElementById("spinner");
+    spinner.style.display = 'flex';
+
+    try {
+        let res = await fetch(`http://localhost:8080/item/getitems/${category}`);
+        let data = await res.json();
+        data.forEach(element => {
+            createItem(element.itemImage, element.itemName, element.itemPrice, element.itemCode);
+        });
+
+    } catch (error) {
+
+    } finally {
+        spinner.style.display = 'none';
+    }
+}
+
+document.getElementById('burgers').addEventListener('click', function(){
+    document.getElementById("row").innerHTML='';
+    getItemsByCategory('burger');
+});
+
+document.getElementById('hotdog').addEventListener('click', function(){
+    document.getElementById("row").innerHTML='';
+    getItemsByCategory('hotdog');
+});
+
+document.getElementById('beverage').addEventListener('click', function(){
+    document.getElementById("row").innerHTML='';
+    getItemsByCategory('beverage');
+});
+
+document.getElementById('checkout_button').addEventListener('click', function(){
+    let myModal = bootstrap.Modal.getOrCreateInstance("#checkout");
+    myModal.show();
+});
+
