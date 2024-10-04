@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr{
+    width: 50%;
+    margin-top: -5px;
+    margin-inline: auto;
+}
+
+.main{
+    margin-inline: auto;
+    margin-top: 20px;
+}
+
+.detailsDiv{
+    width: 98%;
+    padding-block: 10px;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+.detailsRow{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.guardianInfo{
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.btnClear{
+    margin-left: 20px;
+    color: white;
+    background-color: #f51720;
+    width: 6rem;
+    height: 2rem;
+    border: 1px solid #f51720;
+    border-radius: 7px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.btnClear:disabled{
+    background-color: #cccccc;
+    color: white;
+    cursor: not-allowed;
+    border: 1px solid #cccccc;
+}
+
+.btnRegister{
+    margin-right: 9px;
+    color: white;
+    background-color: #0000ff;
+    width: 6rem;
+    height: 2rem;
+    border: 1px solid #0000ff;
+    border-radius: 7px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.btnRegister:disabled{
+    background-color: #cccccc;
+    color: white;
+    cursor: not-allowed;
+    border: 1px solid #cccccc;
+}

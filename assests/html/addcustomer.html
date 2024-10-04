@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Customer</title>
-</head>
-<body>
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/addcustomer-css-files/style.css">
+</head>
+
+<body>
+
+    <h1>Add Customer</h1>
+
+    <hr>
+
+    <div class="main col-lg-6 col-md-6 mt-lg-0 mt-md-0 mt-4 d-flex justify-content-center">
+        <div class="detailsDiv">
+            <h3 class="guardianInfo">Customer Information</h3>
+            <hr>
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Name : </strong></label>
+                <input type="text" class="input form-control" id="stdName">
+            </div>
+            
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Age : </strong></label>
+                <input type="text" class="input form-control" id="stdAge">
+            </div>
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Contact : </strong></label>
+                <input type="text" class="input form-control" id="stdContact">
+            </div>
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Email : </strong></label>
+                <input type="email" class="input form-control" id="stdEmail">
+            </div>
+
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Name : </strong></label>
+                <input type="text" class="input form-control" id="guardianName">
+            </div>
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Address : </strong></label>
+                <input type="text" class="input form-control" id="guardianAddress">
+            </div>
+            <div class="detailsRow">
+                <label for="studentName" class="label form-label"><strong>Contact : </strong></label>
+                <input type="text" class="input form-control" id="guardianContact">
+            </div>
+
+            <div class="buttonRow">
+                <button class="btnClear" id="btnClear">Clear</button>
+                <button class="btnRegister" id="btnRegister">Register</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="../js/addcustomer-js/script.js"></script>
 </body>
+
 </html>

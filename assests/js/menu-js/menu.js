@@ -1,53 +1,58 @@
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-let total=0;
+let total = 0;
 
 function addToCart(itemCode, itemImage, itemPrice, itemName) {
-    console.log(itemImage);
-    console.log(itemName);
+    
+    console.log(itemCode);
     document.getElementById('emptyCartImg').style.display = 'none';
-    let totalPrice=document.getElementById('total');
+    let totalPrice = document.getElementById('total');
+    
     let existingItem = cart.find(item => item.itemCode === itemCode);
     if (existingItem) {
-        
+       
+        console.log('old item');
         existingItem.quantity += 1;
-        total+=itemPrice;
-        totalPrice.innerHTML="Total : "+total;
+        total += itemPrice;
+        totalPrice.innerHTML = "Total : " + total;
     } else {
         
+        console.log('new item');
         cart.push({ image: itemImage, itemCode: itemCode, name: itemName, price: itemPrice, quantity: 1 });
-        total+=itemPrice;
-        totalPrice.innerHTML="Total : "+total;
+        total += itemPrice;
+        totalPrice.innerHTML = "Total : " + total;
     }
+
     
     localStorage.setItem('cart', JSON.stringify(cart));
 
+    
     displayCart();
 }
 
+
 function displayCart() {
+    total = 0;
+    let totalPrice = document.getElementById('total');
 
-    total=0;
-
-    let totalPrice=document.getElementById('total');
-
-    if(cart.length > 0) {
+    
+    if (cart.length > 0) {
         document.getElementById('emptyCartImg').style.display = 'none';
+        console.log('cart not empty');
     }
 
     const cartSection = document.getElementById("cart_section");
     cartSection.innerHTML = "";
 
     cart.forEach(item => {
-
         console.log(item.name);
-        console.log(item.image);
+        
+        
         cartSection.innerHTML += `
             <div class="cart_item mb-2">
                 <div class="image">
-                    <img
-                        src="${item.image}"
-                        alt="" srcset="">
+                    <img src="${item.image}" alt="">
                 </div>
                 <div class="name">
                     ${item.name}
@@ -61,10 +66,11 @@ function displayCart() {
             </div>
         `;
 
-        total+=item.price * item.quantity;
-
+        total += item.price * item.quantity;
     });
-    totalPrice.innerHTML="Total : "+total;
+
+    
+    totalPrice.innerHTML = "Total : " + total;
 }
 
 
@@ -101,10 +107,9 @@ function checkBrowserSize() {
     viewPortWidth = window.innerWidth;
 }
 
-// Function to adjust the top value
-function adjustMainContentTop() {
-    headerHeight = header.offsetHeight; // Get the height of the header
 
+function adjustMainContentTop() {
+    headerHeight = header.offsetHeight;
     if (viewPortWidth <= 992) {
         var navbarHeight = navbar.offsetHeight;
         mainContent.style.top = headerHeight + navbarHeight + 'px';
@@ -113,11 +118,11 @@ function adjustMainContentTop() {
     }
 }
 
-// Initial adjustment
+
 checkBrowserSize();
 adjustMainContentTop();
 
-// Adjust on window resize if the header height can change
+
 window.addEventListener('resize', checkBrowserSize);
 window.addEventListener('resize', adjustMainContentTop);
 
@@ -181,13 +186,13 @@ function createItem(itemImage, Name, itemPrice, itemId) {
 
     addButton.addEventListener("click", function () {
 
-        addToCart(this.getAttribute("data-item-code"), itemImage, itemPrice, Name);
+        addToCart(itemId, itemImage, itemPrice, Name);
     });
 }
 
 function addProduct(event) {
-    let itemModel=bootstrap.Modal.getOrCreateInstance("#itemModal");
-    
+    let itemModel = bootstrap.Modal.getOrCreateInstance("#itemModal");
+
     event.preventDefault();
     console.log("clicked");
     const fileInput = document.getElementById("itemImage");
@@ -222,7 +227,7 @@ function addProduct(event) {
             .then(json => {
                 console.log(json);
                 itemModel.hide();
-                createItem(json.itemImage, json.itemName, json.itemPrice,json.itemId);
+                createItem(json.itemImage, json.itemName, json.itemPrice, json.itemId);
             }
             );
 
@@ -232,9 +237,9 @@ function addProduct(event) {
 
 }
 
-document.getElementById("setting").addEventListener('click',function(){
+document.getElementById("setting").addEventListener('click', function () {
     console.log("settings clicked")
-    let itemModel=bootstrap.Modal.getOrCreateInstance("#itemModal");
+    let itemModel = bootstrap.Modal.getOrCreateInstance("#itemModal");
     itemModel.show();
 });
 
@@ -242,14 +247,14 @@ document.getElementById("setting").addEventListener('click',function(){
 
 document.getElementById("addBtn").addEventListener('click', addProduct);
 
-document.getElementById('all').addEventListener('click', function(){
-    document.getElementById("row").innerHTML='';
+document.getElementById('all').addEventListener('click', function () {
+    document.getElementById("row").innerHTML = '';
     loadItems();
 });
 
 
 async function getItemsByCategory(category) {
-    
+
     let spinner = document.getElementById("spinner");
     spinner.style.display = 'flex';
 
@@ -267,23 +272,110 @@ async function getItemsByCategory(category) {
     }
 }
 
-document.getElementById('burgers').addEventListener('click', function(){
-    document.getElementById("row").innerHTML='';
+document.getElementById('burgers').addEventListener('click', function () {
+    document.getElementById("row").innerHTML = '';
     getItemsByCategory('burger');
 });
 
-document.getElementById('hotdog').addEventListener('click', function(){
-    document.getElementById("row").innerHTML='';
+document.getElementById('hotdog').addEventListener('click', function () {
+    document.getElementById("row").innerHTML = '';
     getItemsByCategory('hotdog');
 });
 
-document.getElementById('beverage').addEventListener('click', function(){
-    document.getElementById("row").innerHTML='';
+document.getElementById('beverage').addEventListener('click', function () {
+    document.getElementById("row").innerHTML = '';
     getItemsByCategory('beverage');
 });
 
-document.getElementById('checkout_button').addEventListener('click', function(){
-    let myModal = bootstrap.Modal.getOrCreateInstance("#checkout");
-    myModal.show();
+let myModal1 = bootstrap.Modal.getOrCreateInstance("#checkout");
+
+document.getElementById('checkout_button').addEventListener('click', function () {
+
+    myModal1.show();
 });
 
+let myModal2 = bootstrap.Modal.getOrCreateInstance("#addcustomer");
+document.getElementById('addUserBtn').addEventListener('click', function () {
+    myModal2.show();
+});
+
+// window.onload = function() {
+//     const storedCustomers = localStorage.getItem('Customers');
+//     console.log('Page Loaded');
+//     if (storedCustomers) {
+//         console.log('Data found in local storage');
+//         customerArray = JSON.parse(storedCustomers); 
+//         customerArray.forEach(data => {
+//             console.log(data.name+" "+data.telephone);
+//         });
+//     }
+// };
+
+let customerArray =JSON.parse(localStorage.getItem('Customers')) || [];
+
+
+document.getElementById('submit').addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    let custName = document.getElementById('custName').value;
+    let custCity = document.getElementById('city').value;
+    let custTelephone = document.getElementById('telephone').value;
+    
+    let isCustomerExists = false;
+
+    customerArray.forEach(data => {
+        if (data.telephone === custTelephone) {
+            isCustomerExists = true;
+        }
+    });
+
+    myModal2.hide();
+    
+    if (isCustomerExists) {
+        const toastLiveExample = document.getElementById('custAddError');
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastBootstrap.show();
+    } else {
+        let customer = {
+            name: custName,
+            city: custCity,
+            telephone: custTelephone
+        };
+        
+        customerArray.push(customer); 
+        localStorage.setItem('Customers', JSON.stringify(customerArray)); 
+        const toastLiveExample = document.getElementById('custAddSucccess');
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastBootstrap.show();
+    }
+
+    
+});
+
+
+document.getElementById('placeOrder').addEventListener('click', function (event) {
+    event.preventDefault();
+    let customerId = document.getElementById('custId').value;
+    let isCustomerExists = false;
+
+    customerArray.forEach(data => {
+        if (data.telephone === customerId) {
+            console.log('success');
+            isCustomerExists = true;
+        } else {
+            console.log('error');
+        }
+    });
+
+    if (isCustomerExists) {
+        myModal1.hide();
+        const toastLiveExample = document.getElementById('orderSuccess');
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastBootstrap.show();
+    } else {
+        myModal1.hide();
+        const toastLiveExample = document.getElementById('orderFailed');
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastBootstrap.show();
+    }
+});

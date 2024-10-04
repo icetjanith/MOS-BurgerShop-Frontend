@@ -36,7 +36,7 @@ document.getElementById("btnConfirmDelete").addEventListener("click", async func
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         console.log("Student deleted successfully.");
-        window.location.href = "file:///D:/Final-Burger-Shop/assests/html/menu.html";
+        window.location.href = "../html/menu.html";
 
     } catch (error) {
         console.error("Error deleting student:", error);
@@ -48,7 +48,7 @@ document.getElementById("btnConfirmDelete").addEventListener("click", async func
 
 document.getElementById("btnUpdateStudent").addEventListener("click", async function (event) {
     event.preventDefault();
-    let i = document.getElementById('stdName');
+    let stdName = document.getElementById('stdName');
     let stdAge = document.getElementById('stdAge');
     let stdContacts = document.getElementById('stdContacts');
     let stdEmail = document.getElementById('stdEmail');
@@ -77,7 +77,7 @@ document.getElementById("btnUpdateStudent").addEventListener("click", async func
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         console.log("Student updated successfully.");
-        window.location.reload();
+        window.location.href = "../html/menu.html";
 
     } catch (error) {
         console.error("Error updating student:", error);

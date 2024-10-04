@@ -78,8 +78,7 @@
         src="../img/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" srcset="" class="img-fluid" width="80%"></a>
     <a href="../html/cart.html" target="_blank" class=" my-3 mx-auto mt-4"><img
         src="../img/shopping-cart-empty-side-view.png" alt="" srcset="" class="img-fluid" width="70%"></a>
-    <img src="../img/add-user_5918883.png" alt="" srcset=""
-      class="img-fluid my-3 mx-auto mt-4" width="80%">
+    <img src="../img/add-user_5918883.png" alt="" srcset="" class="img-fluid my-3 mx-auto mt-4" width="80%" id="addUserBtn">
     <img src="..//img/add-button-sign-of-a-plus-symbol-inside-a-double-square-shape-svgrepo-com.svg" alt="" srcset=""
       class="img-fluid my-3 mx-auto mt-4" width="80%" id="setting">
 
@@ -173,19 +172,115 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
+          <h5 class="modal-title">Checkout</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Modal body text goes here.</p>
+          <form>
+            <div class="mb-3">
+              <label for="custName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="custName">
+            </div>
+            
+            <div class="mb-3">
+              <label for="telephone" class="form-label">Telephone</label>
+              <input type="text" class="form-control" id="custId">
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="placeOrder">Place Order</button>
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="modal" tabindex="-1" id="addcustomer">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="custName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="custName">
+            </div>
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city">
+            </div>
+            <div class="mb-3">
+              <label for="telephone" class="form-label">Telephone</label>
+              <input type="text" class="form-control" id="telephone">
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="submit">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 start-50 p-3">
+    <div id="custAddSucccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../img/png-transparent-computer-icons-icon-design-business-success-miscellaneous-angle-text-thumbnail.png" width="15%" class="rounded me-2" alt="...">
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Customer added successfully !
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 start-50 p-3">
+    <div id="custAddError" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../img/InCorrect-icon-in-sticker-style-on-transparent-background-PNG.png" width="15%" class="rounded me-2" alt="...">
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Customer phone number already exists !
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 start-50 p-3">
+    <div id="orderSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../img/png-transparent-computer-icons-icon-design-business-success-miscellaneous-angle-text-thumbnail.png" width="15%" class="rounded me-2" alt="...">
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Order Success !
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 start-50 p-3">
+    <div id="orderFailed" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../img/InCorrect-icon-in-sticker-style-on-transparent-background-PNG.png" class="rounded me-2" alt="..." width="15%">
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Order Failed ! You are not registerd customer.
+      </div>
+    </div>
+  </div>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
