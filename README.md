@@ -1,28 +1,19 @@
-##🍔 Burger Shop Frontend
+# 🍔 Burger Shop Frontend
 
-Welcome to the Burger Shop Frontend! This project is a web-based interface for a burger shop, where users can browse burgers, add items to their cart, and place orders. The project is built with HTML, CSS, JavaScript, and Bootstrap. It interacts with a backend system to manage customer details and handle the shopping cart.
+Welcome to the Burger Shop Frontend! This project is a web-based interface for a burger shop where users can browse burgers, add items to their cart, and place orders. The project is built using **HTML**, **CSS**, **JavaScript**, and **Bootstrap**.
 
-##Features
-Responsive Layout: The layout is mobile-friendly and adapts to various screen sizes.
+## Features
 
-Product Listing: Burgers and other items are displayed with images, prices, and an add-to-cart button.
+- **Responsive Layout**: The layout adapts to various screen sizes and is mobile-friendly.
+- **Product Listing**: Burgers and other items are displayed with images, prices, and item descriptions.
+- **Shopping Cart**: Users can add items to their cart, view total prices, and update item quantities.
+- **Local Storage**: Customer and cart data is stored in the browser's local storage, allowing users to retrieve their data even after page refreshes.
+- **Bootstrap Modals**: Includes modals for customer information input and order confirmation.
+- **Toasts for Feedback**: Notifications for success and error messages using Bootstrap Toasts.
 
-Shopping Cart: Users can add/remove items, and the total price is calculated automatically.
+## Installation
 
-Customer Registration: Customers can register by providing their name, city, and telephone number.
+1. Clone the repository:
 
-Order Placement: Users can place orders once they've added items to their cart.
-
-Local Storage: Cart items and customer data are saved locally in the browser, allowing users to retain information across sessions.
-
-##Technologies Used
-
-HTML: For the structure of the web pages.
-
-CSS: For styling and layout.
-
-JavaScript: For interactive functionality like adding items to the cart, managing customer details, and displaying toasts.
-
-Bootstrap: For responsive design and pre-built components like modals and toasts.
-
-LocalStorage: For saving and retrieving cart items and customer information between sessions.
+   ```bash
+   git clone https://github.com/yourusername/burger-shop-frontend.git
